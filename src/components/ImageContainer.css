@@ -1,0 +1,29 @@
+.ImageContainer {
+  margin-top: 65px;
+  position: relative;
+}
+
+.ImageContainer img {
+  width: 100%;
+}
+
+.ImageContainer button {
+  position: absolute;
+}
+
+.ImageContainer .prev-btn,
+.ImageContainer .next-btn {
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 15px;
+  border-radius: 50%;
+  border: none;
+}
+
+.ImageContainer .prev-btn {
+  left: 15px;
+}
+
+.ImageContainer .next-btn {
+  right: 15px;
+}
