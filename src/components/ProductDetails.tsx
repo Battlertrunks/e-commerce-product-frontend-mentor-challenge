@@ -1,3 +1,4 @@
+import OrderForm from "./OrderForm";
 import "./ProductDetails.css";
 
 const ProductDetails = () => {
@@ -18,6 +19,7 @@ const ProductDetails = () => {
         </h3>
         <h4 className="orig-price">$250.00</h4>
       </div>
+      <OrderForm />
     </section>
   );
 };

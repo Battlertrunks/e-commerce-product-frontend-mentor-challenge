@@ -9,9 +9,9 @@ ul {
   padding: 0;
 }
 
-body {
+body,
+button {
   font-family: "Kumbh Sans", sans-serif;
-  background-color: #eee;
 }
 
 code {
