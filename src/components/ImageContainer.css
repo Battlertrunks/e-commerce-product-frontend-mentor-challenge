@@ -7,14 +7,14 @@
   width: 100%;
 }
 
-.ImageContainer button {
+.ImageContainer li {
   position: absolute;
+  list-style: none;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
-.ImageContainer .prev-btn,
-.ImageContainer .next-btn {
-  top: 50%;
-  transform: translateY(-50%);
+.ImageContainer button {
   padding: 10px 15px;
   border-radius: 50%;
   border: none;

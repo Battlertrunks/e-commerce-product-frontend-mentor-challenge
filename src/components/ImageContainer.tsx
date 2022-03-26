@@ -33,13 +33,13 @@ const ImageContainer = () => {
   return (
     <div className="ImageContainer">
       <ul>
-        <li>
-          <button className="prev-btn" onClick={onPrev}>
+        <li className="prev-btn">
+          <button onClick={onPrev}>
             <img src={prevIcon} alt="Previous button icon." />
           </button>
         </li>
-        <li>
-          <button className="next-btn" onClick={onNext}>
+        <li className="next-btn">
+          <button onClick={onNext}>
             <img src={nextIcon} alt="Next button icon." />
           </button>
         </li>
