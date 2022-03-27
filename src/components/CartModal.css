@@ -1,14 +1,15 @@
 .CartModal {
   position: absolute;
   top: 75px;
-  left: 10px;
-  right: 10px;
+  left: 3%;
+  right: 3%;
   height: 325px;
   z-index: 1;
   background-color: #fff;
   border-radius: 15px;
-  transform: translateY(-115%);
+  transform: translateY(-140%);
   transition: 0.4s all ease-in;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.247);
 }
 
 .CartModal ul {
@@ -108,4 +109,17 @@
   height: 20px;
   border: none;
   background-color: transparent;
+}
+
+@media only screen and (min-width: 1440px) {
+  .CartModal {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.404);
+    position: fixed;
+    left: 70%;
+    right: 50px;
+  }
+
+  .pull-down-animation {
+    transform: translateY(10%);
+  }
 }

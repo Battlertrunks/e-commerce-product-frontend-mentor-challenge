@@ -6,16 +6,21 @@ import image4 from "../ecommerce-product-page-main/images/image-product-4.jpg";
 
 import nextIcon from "../ecommerce-product-page-main/images/icon-next.svg";
 import prevIcon from "../ecommerce-product-page-main/images/icon-previous.svg";
-import { useState } from "react";
+import React, { useState } from "react";
+import DesktopPreviewModal from "./DesktopPreviewModal";
 
 const ImageContainer = () => {
   const [previewImage, setPreviewImage] = useState<string>(image1);
   const previewImages = [image1, image2, image3, image4];
 
+  const [selectedImage, setSelectedImage] = useState<number>(0);
+  const [previewClicked, setPreviewClicked] = useState<boolean>(false);
+
   const onPrev = (): void => {
     const index: number = previewImages.indexOf(previewImage);
     if (index) {
       setPreviewImage(previewImages[index - 1]);
+      setSelectedImage(index - 1);
     } else {
       setPreviewImage(previewImages[previewImages.length - 1]);
     }
@@ -25,13 +30,23 @@ const ImageContainer = () => {
     const index: number = previewImages.indexOf(previewImage);
     if (index < previewImages.length - 1) {
       setPreviewImage(previewImages[index + 1]);
+      setSelectedImage(index + 1);
     } else {
       setPreviewImage(previewImages[0]);
     }
   };
 
-  return (
-    <div className="ImageContainer">
+  const onSelect = (selectedImg: number): void => {
+    setPreviewImage(previewImages[selectedImg]);
+    setSelectedImage(selectedImg);
+  };
+
+  const closePreview = () => {
+    setPreviewClicked((prev) => !prev);
+  };
+
+  const displayPreviews = (
+    <div className="images-container">
       <div className="main-image">
         <ul>
           <li className="prev-btn">
@@ -45,15 +60,33 @@ const ImageContainer = () => {
             </button>
           </li>
         </ul>
-        <img src={previewImage} alt="" />
+        <img
+          onClick={() => setPreviewClicked((prev) => !prev)}
+          className="main-preview-image"
+          src={previewImage}
+          alt="Preview image."
+        />
       </div>
       <ul className="desktop-preview-container">
         {previewImages.map((image, i) => (
-          <li>
-            <img src={image} alt={`Preview image ${i}`} />
+          <li className={i === selectedImage ? "selected-image" : ""}>
+            <img
+              onClick={() => onSelect(i)}
+              src={image}
+              alt={`Preview image ${i}`}
+            />
           </li>
         ))}
       </ul>
+    </div>
+  );
+
+  return (
+    <div className="ImageContainer">
+      {displayPreviews}
+      {previewClicked && (
+        <DesktopPreviewModal onModal={displayPreviews} onClose={closePreview} />
+      )}
     </div>
   );
 };

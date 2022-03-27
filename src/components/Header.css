@@ -11,6 +11,12 @@
   z-index: 2;
 }
 
+.Header .logo,
+.Header .cart-btn,
+.Header .profile-icon {
+  cursor: pointer;
+}
+
 .Header nav ul {
   display: flex;
   align-items: center;
@@ -33,6 +39,12 @@
 
 .Header nav .profile-icon {
   width: 25px;
+}
+
+.Header nav .profile-icon:hover {
+  outline: 3px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+  transition: 0.1s outline ease-out;
 }
 
 .Header nav .cart-btn {
@@ -70,7 +82,12 @@
     width: 1440px;
     margin: 0 auto;
     border-bottom: 1px solid rgb(199, 199, 199);
-    padding: 25px 0;
+    padding: 0;
+    height: 100px;
+  }
+
+  .Header .sidebar {
+    display: none;
   }
 
   .Header .nav-items {
@@ -85,6 +102,12 @@
     color: #999;
     cursor: pointer;
     padding: 5px;
+  }
+
+  .Header .nav-items button:hover {
+    border-bottom: 3px solid hsl(26, 100%, 55%);
+    margin-bottom: -3px;
+    height: 95px;
   }
 
   .Header nav .profile-icon {

@@ -6,6 +6,7 @@
 .ImageContainer .main-image img {
   display: block;
   width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -20,6 +21,7 @@
   padding: 12px 15px;
   border-radius: 50%;
   border: none;
+  cursor: pointer;
 }
 
 .ImageContainer .main-image .prev-btn {
@@ -30,10 +32,23 @@
   right: 15px;
 }
 
+.ImageContainer .desktop-preview-container {
+  display: none;
+}
+
 @media only screen and (min-width: 1440px) {
+  .ImageContainer {
+    margin-top: 25px;
+  }
+
   .ImageContainer .main-image img {
+    max-width: none;
+    cursor: pointer;
+  }
+
+  .ImageContainer .main-preview-image {
     border-radius: 15px;
-    width: 550px;
+    width: 650px;
   }
 
   .ImageContainer .main-image button {
@@ -50,5 +65,16 @@
   .ImageContainer .desktop-preview-container img {
     width: 100px;
     border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .ImageContainer .selected-image {
+    outline: 3px solid hsl(26, 100%, 55%);
+    height: 100px;
+    border-radius: 10px;
+  }
+
+  .ImageContainer .selected-image img {
+    opacity: 50%;
   }
 }

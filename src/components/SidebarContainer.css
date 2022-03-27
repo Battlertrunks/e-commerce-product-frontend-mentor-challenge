@@ -35,3 +35,9 @@
 .sidebar-not-active {
   transform: translateX(-101%);
 }
+
+@media only screen and (min-width: 1440px) {
+  .SidebarContainer {
+    display: none;
+  }
+}
