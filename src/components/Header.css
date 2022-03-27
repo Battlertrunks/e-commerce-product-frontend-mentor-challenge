@@ -1,4 +1,7 @@
-.Header {
+.Header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,31 +11,25 @@
   z-index: 1;
 }
 
-.Header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.Header ul {
+.Header nav ul {
   display: flex;
   align-items: center;
 }
 
-.Header li {
+.Header nav li {
   list-style: none;
   margin: 0 5px;
 }
 
-.Header button {
+.Header nav button {
   background-color: transparent;
   border: none;
 }
 
-.Header .sidebar {
+.Header nav .sidebar {
   width: 20px;
 }
 
-.Header .profile-icon {
+.Header nav .profile-icon {
   width: 40px;
 }

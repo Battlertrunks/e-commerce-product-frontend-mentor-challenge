@@ -3,14 +3,22 @@ import logo from "../ecommerce-product-page-main/images/logo.svg";
 import sidebarButton from "../ecommerce-product-page-main/images/icon-menu.svg";
 import cart from "../ecommerce-product-page-main/images/icon-cart.svg";
 import avatar from "../ecommerce-product-page-main/images/image-avatar.png";
+import { useState } from "react";
+import SidebarContainer from "./SidebarContainer";
 
 const Header = () => {
+  const [sidebarToggle, setSidebarToggle] = useState(false);
+
+  const closeSidebar = (): void => {
+    setSidebarToggle(false);
+  };
+
   return (
     <header className="Header">
       <nav>
         <ul>
           <li>
-            <button>
+            <button onClick={() => setSidebarToggle((prev) => !prev)}>
               <img
                 className="sidebar"
                 src={sidebarButton}
@@ -41,6 +49,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <SidebarContainer onToggle={sidebarToggle} onClose={closeSidebar} />
     </header>
   );
 };
