@@ -5,13 +5,17 @@ import cart from "../ecommerce-product-page-main/images/icon-cart.svg";
 import avatar from "../ecommerce-product-page-main/images/image-avatar.png";
 import { useState } from "react";
 import SidebarContainer from "./SidebarContainer";
+import CartModal from "./CartModal";
 
 const Header = () => {
-  const [sidebarToggle, setSidebarToggle] = useState(false);
+  const [sidebarToggle, setSidebarToggle] = useState<boolean>(false);
+  const [cartModalToggle, setCartModalToggle] = useState<boolean>(false);
 
   const closeSidebar = (): void => {
     setSidebarToggle(false);
   };
+
+  const backgroundSidebar = sidebarToggle ? "background-shade" : "";
 
   return (
     <header className="Header">
@@ -34,7 +38,7 @@ const Header = () => {
         </ul>
         <ul>
           <li>
-            <button>
+            <button onClick={() => setCartModalToggle((prev) => !prev)}>
               <img className="cart-icon" src={cart} alt="cart icon button" />
             </button>
           </li>
@@ -49,7 +53,9 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+      <div className={backgroundSidebar} />
       <SidebarContainer onToggle={sidebarToggle} onClose={closeSidebar} />
+      <CartModal onCart={cartModalToggle} />
     </header>
   );
 };
