@@ -38,6 +38,23 @@ const Header = () => {
               <img className="logo" src={logo} alt="Company logo" />
             </h1>
           </li>
+          <ul className="nav-items">
+            <li>
+              <button>Collections</button>
+            </li>
+            <li>
+              <button>Men</button>
+            </li>
+            <li>
+              <button>Women</button>
+            </li>
+            <li>
+              <button>About</button>
+            </li>
+            <li>
+              <button>Contact</button>
+            </li>
+          </ul>
         </ul>
         <ul>
           <li>

@@ -32,19 +32,28 @@ const ImageContainer = () => {
 
   return (
     <div className="ImageContainer">
-      <ul>
-        <li className="prev-btn">
-          <button onClick={onPrev}>
-            <img src={prevIcon} alt="Previous button icon." />
-          </button>
-        </li>
-        <li className="next-btn">
-          <button onClick={onNext}>
-            <img src={nextIcon} alt="Next button icon." />
-          </button>
-        </li>
+      <div className="main-image">
+        <ul>
+          <li className="prev-btn">
+            <button onClick={onPrev}>
+              <img src={prevIcon} alt="Previous button icon." />
+            </button>
+          </li>
+          <li className="next-btn">
+            <button onClick={onNext}>
+              <img src={nextIcon} alt="Next button icon." />
+            </button>
+          </li>
+        </ul>
+        <img src={previewImage} alt="" />
+      </div>
+      <ul className="desktop-preview-container">
+        {previewImages.map((image, i) => (
+          <li>
+            <img src={image} alt={`Preview image ${i}`} />
+          </li>
+        ))}
       </ul>
-      <img src={previewImage} alt="" />
     </div>
   );
 };

@@ -20,7 +20,7 @@ const ProductDetails = () => {
       </p>
       <h2 className="item-name">{product.productName}</h2>
       <p className="description">{product.description}</p>
-      <div>
+      <div className="price-info">
         <h3 className="sale-price">
           ${product.price.toFixed(2)}{" "}
           <span className="percent-off">{product.percentOff}%</span>

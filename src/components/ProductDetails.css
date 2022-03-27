@@ -54,3 +54,19 @@
   color: rgb(180, 180, 180);
   text-decoration: line-through;
 }
+
+@media only screen and (min-width: 1440px) {
+  .ProductDetails {
+    padding-left: 150px;
+  }
+
+  .ProductDetails .item-name {
+    font-size: 42px;
+    width: 450px;
+  }
+
+  .ProductDetails .price-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

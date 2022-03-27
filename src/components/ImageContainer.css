@@ -1,29 +1,54 @@
-.ImageContainer {
+.ImageContainer .main-image {
   margin-top: 65px;
   position: relative;
 }
 
-.ImageContainer img {
+.ImageContainer .main-image img {
+  display: block;
   width: 100%;
+  margin: 0 auto;
 }
 
-.ImageContainer li {
+.ImageContainer .main-image li {
   position: absolute;
   list-style: none;
   transform: translateY(-50%);
   top: 50%;
 }
 
-.ImageContainer button {
-  padding: 10px 15px;
+.ImageContainer .main-image button {
+  padding: 12px 15px;
   border-radius: 50%;
   border: none;
 }
 
-.ImageContainer .prev-btn {
+.ImageContainer .main-image .prev-btn {
   left: 15px;
 }
 
-.ImageContainer .next-btn {
+.ImageContainer .main-image .next-btn {
   right: 15px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .ImageContainer .main-image img {
+    border-radius: 15px;
+    width: 550px;
+  }
+
+  .ImageContainer .main-image button {
+    display: none;
+  }
+
+  .ImageContainer .desktop-preview-container {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+  }
+
+  .ImageContainer .desktop-preview-container img {
+    width: 100px;
+    border-radius: 10px;
+  }
 }

@@ -60,3 +60,35 @@
   z-index: 1;
   transition: all 0.3s ease;
 }
+
+.Header .nav-items {
+  display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+  .Header nav {
+    width: 1440px;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    padding: 25px 0;
+  }
+
+  .Header .nav-items {
+    display: contents;
+  }
+
+  .Header .nav-items li {
+    margin-left: 25px;
+  }
+
+  .Header .nav-items button {
+    color: #999;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .Header nav .profile-icon {
+    width: 35px;
+    margin-left: 15px;
+  }
+}

@@ -7,11 +7,13 @@ import ProductDetails from "./components/ProductDetails";
 
 function App() {
   return (
-    <main className="App">
+    <div className="App">
       <Header />
-      <ImageContainer />
-      <ProductDetails />
-    </main>
+      <main>
+        <ImageContainer />
+        <ProductDetails />
+      </main>
+    </div>
   );
 }
 
